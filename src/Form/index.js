@@ -1,4 +1,5 @@
 import "./style.css"
+import currencies from "../Currencies";
 
 const Form = () => {
     return (
@@ -15,7 +16,7 @@ const Form = () => {
                                 autofocus required min="0.01" />
                         </label>
                     </p>
-                    <p>Wybierz walutę (kurs z dn. 20.12.2022):</p>
+                    <p>Wybierz walutę (kurs z dn. 18.02.2023):</p>
                     <ul className="form__labelList">
                         <li>
                             <label>
