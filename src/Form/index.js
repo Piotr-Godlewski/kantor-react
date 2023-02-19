@@ -4,6 +4,8 @@ import { useState } from "react";
 
 const Form = () => {
     const [amount, setAmount] = useState("");
+    const [currency, setCurrency] = useState();
+    const onSelectChange = ({ target }) => setCurrency(target.value);
     const onSubmit = (event) => {
         event.preventDefault();
     }
@@ -32,19 +34,17 @@ const Form = () => {
                         </label>
                     </p>
                     <p>Wybierz walutę (kurs z dn. 18.02.2023):</p>
-                    <ul className="form__labelList">
+                    <select
+                        className="form__labelList"
+                        value={currency}
+                        onChange={onSelectChange}
+                    >
                         {currencies.map((currency => (
-                            <li>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name="currency"
-                                    />
-                                    {currency.name}
-                                </label>
-                            </li>
+                            <option>
+                                {currency.name} {currency.symbol}
+                            </option>
                         )))}
-                    </ul>
+                    </select>
                     <p>
                         <button className="form__button">
                             Przelicz
