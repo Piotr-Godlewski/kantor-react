@@ -2,12 +2,14 @@ import "./style.css"
 import currencies from "../Currencies";
 import { useState } from "react";
 
-const Form = () => {
+const Form = ({ calculateResult, result }) => {
     const [amount, setAmount] = useState("");
-    const [currency, setCurrency] = useState();
+    const [currency, setCurrency] = useState(currencies[0].symbol);
     const onSelectChange = ({ target }) => setCurrency(target.value);
     const onSubmit = (event) => {
         event.preventDefault();
+        calculateResult(amount, currency);
+        console.log({result})
     }
 
     return (
@@ -40,7 +42,9 @@ const Form = () => {
                         onChange={onSelectChange}
                     >
                         {currencies.map((currency => (
-                            <option>
+                            <option
+                                key={currency.symbol}
+                                value={currency.symbol}>
                                 {currency.name} {currency.symbol}
                             </option>
                         )))}
@@ -52,7 +56,7 @@ const Form = () => {
                     </p>
                     <p>
                         <label>
-                            Po wymianie otrzymasz: <span className="form__labelResult">0.00</span>
+                            Po wymianie otrzymasz: <span className="form__labelResult"></span>
                         </label>
                     </p>
                 </fieldset>
