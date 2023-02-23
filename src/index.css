@@ -10,7 +10,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.backgroundImage {
+:root {
   background-image: url("../public/changedMoney.jpg");
   background-position: center;
   background-size: cover;
