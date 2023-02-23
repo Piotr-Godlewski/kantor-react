@@ -1,6 +1,7 @@
 import "./style.css"
 import currencies from "../Currencies";
 import { useState } from "react";
+import Result from "./Result";
 
 const Form = ({ calculateResult, result }) => {
     const [amount, setAmount] = useState("");
@@ -9,7 +10,6 @@ const Form = ({ calculateResult, result }) => {
     const onSubmit = (event) => {
         event.preventDefault();
         calculateResult(amount, currency);
-        console.log({result})
     }
 
     return (
@@ -35,7 +35,7 @@ const Form = ({ calculateResult, result }) => {
                                 min="0.01" />
                         </label>
                     </p>
-                    <p>Wybierz walutę (kurs z dn. 18.02.2023):</p>
+                    <p className="form__labelText">Wybierz walutę:</p>
                     <select
                         className="form__labelList"
                         value={currency}
@@ -55,12 +55,13 @@ const Form = ({ calculateResult, result }) => {
                         </button>
                     </p>
                     <p>
-                        <label>
-                            Po wymianie otrzymasz: <span className="form__labelResult"></span>
+                        <label >
+                            Po wymianie otrzymasz:
+                            <Result result={result} />
                         </label>
                     </p>
+                    <footer className="form__footer">kursy walut z dn. 18.02.2023</footer>
                 </fieldset>
-
             </form>
 
         </div>

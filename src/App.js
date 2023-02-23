@@ -9,7 +9,9 @@ function App() {
   const calculateResult = (amount, currency) => {
     const rate = currencies.find(({ symbol }) => symbol === currency).rate;
     setResult({
-      target: amount / rate
+      sourceAmount: + amount,
+      targetResult: amount / rate,
+      currency
     })
   }
 
