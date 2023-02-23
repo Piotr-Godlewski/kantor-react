@@ -14,7 +14,7 @@ body {
   background-image: url("../public/changedMoney.jpg");
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
 }
 
 .body {
