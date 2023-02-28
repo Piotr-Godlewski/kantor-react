@@ -16,7 +16,7 @@ function App() {
   }
 
   return (
-    <body className="body backgroundImage">
+    <body className="body">
       <Form
         calculateResult={calculateResult}
         result={result}>

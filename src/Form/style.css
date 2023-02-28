@@ -21,11 +21,6 @@
   padding: 5px;
 }
 
-.form__field:disabled {
-  background-color: hsl(182, 25%, 80%);
-  border-color: cadetblue;
-}
-
 .form__labelList {
   list-style: none;
   padding: 5px;

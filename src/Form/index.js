@@ -39,15 +39,14 @@ const Form = ({ calculateResult, result }) => {
                     <select
                         className="form__labelList"
                         value={currency}
-                        onChange={onSelectChange}
-                    >
+                        onChange={onSelectChange} >
                         {currencies.map((currency => (
                             <option
                                 key={currency.symbol}
-                                value={currency.symbol}>
+                                value={currency.symbol} >
                                 {currency.name} {currency.symbol}
                             </option>
-                        )))}
+                        )))};
                     </select>
                     <p>
                         <button className="form__button">
