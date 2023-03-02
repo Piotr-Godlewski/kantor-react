@@ -1,6 +1,6 @@
 import './index.css';
 import Form from './Form';
-import currencies from './Currencies';
+import currencies from './currencies'
 import { useState } from 'react';
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
 
   const calculateResult = (amount, currency) => {
     const rate = currencies.find(({ symbol }) => symbol === currency).rate;
+
     setResult({
       sourceAmount: + amount,
       targetResult: amount / rate,
@@ -16,12 +17,10 @@ function App() {
   }
 
   return (
-    <body className="body">
       <Form
         calculateResult={calculateResult}
         result={result}>
       </Form>
-    </body>
   )
 }
 

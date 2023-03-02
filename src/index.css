@@ -15,9 +15,6 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: repeat-y;
-}
-
-.body {
   display: flex;
   justify-content: center;
 }

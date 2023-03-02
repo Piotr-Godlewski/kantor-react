@@ -1,14 +1,17 @@
 import "./style.css"
-import currencies from "../Currencies";
+import currencies from "../currencies";
 import { useState } from "react";
 import Result from "./Result";
 
 const Form = ({ calculateResult, result }) => {
     const [amount, setAmount] = useState("");
     const [currency, setCurrency] = useState(currencies[0].symbol);
+
     const onSelectChange = ({ target }) => setCurrency(target.value);
+
     const onSubmit = (event) => {
         event.preventDefault();
+        
         calculateResult(amount, currency);
     }
 
