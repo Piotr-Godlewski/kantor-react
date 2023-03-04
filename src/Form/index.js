@@ -2,6 +2,7 @@ import "./style.css"
 import currencies from "../currencies";
 import { useState } from "react";
 import Result from "./Result";
+import Clock from "./Clock";
 
 const Form = ({ calculateResult, result }) => {
     const [amount, setAmount] = useState("");
@@ -21,6 +22,7 @@ const Form = ({ calculateResult, result }) => {
                 <fieldset className="form__fieldset">
                     <legend className="form__legend">Kantor wymiany walut</legend>
                     <p>
+                    <Clock/>
                         <label>
                             <span className="form__labelText">
                                 Podaj kwotę w zł:
