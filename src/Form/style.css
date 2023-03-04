@@ -1,14 +1,13 @@
 .container {
   background-color: white;
-  border-radius: 5px;
+  border-radius: 20px;
   margin: 20px;
   padding: 10px;
   text-align: center;
-  flex-basis: 500px;
 }
 
 .form__labelText {
-  margin-right: 10px;
+  margin: 10px;
   max-width: 200px;
   display: inline-block;
 }
@@ -17,7 +16,6 @@
   border: 2px solid #888;
   border-radius: 5px;
   width: 100%;
-  max-width: 125px;
   padding: 5px;
 }
 
@@ -31,11 +29,11 @@
   border: none;
   border-radius: 5px;
   width: 100%;
-  max-width: 250px;
   display: block;
   margin: 10px auto;
   padding: 5px;
   background-color: cadetblue;
+  font-size: 18px;
 }
 
 .form__button:hover {
@@ -50,18 +48,17 @@
 }
 
 .form__fieldset {
-  border: 2px solid hsl(182, 25%, 60%);
+  border: none;
   padding: 10px;
   border-radius: 5px;
   margin: 5px;
 }
 
-.form__legend {
-  color: white;
-  background-color: cadetblue;
-  border-radius: 5px;
+.form__header {
+  color: teal;
   padding: 10px;
-  text-align: left;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .form__labelResult {
@@ -70,4 +67,16 @@
 
 .form__footer {
   font-size: 11px;
+}
+
+.form__paragraph {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 767px) {
+  .form__paragraph {
+    grid-template-columns: 1fr;
+  }
 }
