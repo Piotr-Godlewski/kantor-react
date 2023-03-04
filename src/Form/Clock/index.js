@@ -5,9 +5,13 @@ const Clock = () => {
 const [date, setDate] = useState(new Date());
 
 useEffect(() => {
-    setInterval(() => {
+    const intervalId = setInterval(() => {
         setDate(date => date = new Date());
     }, 1000);
+
+    return () => {
+        clearInterval(intervalId);
+    };
 }, []);
 
 return (
@@ -16,6 +20,5 @@ return (
     </p>
 )
 }
-
 
 export default Clock
