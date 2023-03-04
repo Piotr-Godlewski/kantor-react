@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/kantor-react/static/css/main.1b545756.css",
-    "main.js": "/kantor-react/static/js/main.f7f3e814.js",
+    "main.css": "/kantor-react/static/css/main.802d5a91.css",
+    "main.js": "/kantor-react/static/js/main.c8a53103.js",
     "static/js/787.509e3ee3.chunk.js": "/kantor-react/static/js/787.509e3ee3.chunk.js",
     "static/media/changedMoney.jpg": "/kantor-react/static/media/changedMoney.0fd35a5ed1fcdfd4f277.jpg",
     "index.html": "/kantor-react/index.html",
-    "main.1b545756.css.map": "/kantor-react/static/css/main.1b545756.css.map",
-    "main.f7f3e814.js.map": "/kantor-react/static/js/main.f7f3e814.js.map",
+    "main.802d5a91.css.map": "/kantor-react/static/css/main.802d5a91.css.map",
+    "main.c8a53103.js.map": "/kantor-react/static/js/main.c8a53103.js.map",
     "787.509e3ee3.chunk.js.map": "/kantor-react/static/js/787.509e3ee3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1b545756.css",
-    "static/js/main.f7f3e814.js"
+    "static/css/main.802d5a91.css",
+    "static/js/main.c8a53103.js"
   ]
 }
