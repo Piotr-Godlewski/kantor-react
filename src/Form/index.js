@@ -1,8 +1,8 @@
-import "./style.css"
 import currencies from "../currencies";
 import { useState } from "react";
 import Result from "./Result";
 import Clock from "./Clock";
+import { FormContainer, StyledForm, Header, Button, Paragraph, LabelText, FormField, Footer } from "./styled";
 
 const Form = ({ calculateResult, result }) => {
     const [amount, setAmount] = useState("");
@@ -17,54 +17,55 @@ const Form = ({ calculateResult, result }) => {
     }
 
     return (
-        <div className="container">
-            <form className="form" onSubmit={onSubmit}>
-                <fieldset className="form__fieldset">
-                    <Clock />
-                    <header className="form__header">Kantor wymiany walut</header>
-                    <p className="form__paragraph">
-                        <span className="form__labelText">
-                            Podaj kwotę w zł:
-                        </span>
-                        <input
-                            value={amount}
-                            onChange={({ target }) => setAmount(target.value)}
-                            className="form__field"
-                            type="number"
-                            step="0.01"
-                            name="kwota_zl"
-                            placeholder="0.00"
-                            autoFocus
-                            required
-                            min="0.01" />
+        <FormContainer>
+            <StyledForm onSubmit={onSubmit}>
+                <Clock />
+                <Header>
+                    Kantor wymiany walut
+                </Header>
+                <Paragraph>
+                    <LabelText>
+                        Podaj kwotę w zł:
+                    </LabelText>
+                    <FormField
+                        value={amount}
+                        onChange={({ target }) => setAmount(target.value)}
+                        type="number"
+                        step="0.01"
+                        name="kwota_zl"
+                        placeholder="0.00"
+                        autoFocus
+                        required
+                        min="0.01"
+                    />
+                </Paragraph>
+                <Paragraph>
+                    <LabelText>
+                        Wybierz walutę:
+                    </LabelText>
+                    <FormField as={"select"}
+                        value={currency}
+                        onChange={onSelectChange}
+                    >
+                        {currencies.map((currency => (
+                            <option
+                                key={currency.symbol}
+                                value={currency.symbol} >
+                                {currency.name} {currency.symbol}
+                            </option>
+                        )))};
+                    </FormField>
+                </Paragraph>
+                <Button>
+                    Przelicz
+                </Button>
+                <Result result={result} />
+                <Footer>
+                    kursy walut z dn. 18.02.2023
+                </Footer>
+            </StyledForm>
 
-                    </p>
-                    <p className="form__paragraph">
-                        <span className="form__labelText">Wybierz walutę:</span>
-                        <select
-                            className="form__labelList"
-                            value={currency}
-                            onChange={onSelectChange} >
-                            {currencies.map((currency => (
-                                <option
-                                    key={currency.symbol}
-                                    value={currency.symbol} >
-                                    {currency.name} {currency.symbol}
-                                </option>
-                            )))};
-                        </select>
-                    </p>
-                    <p>
-                        <button className="form__button">
-                            Przelicz
-                        </button>
-                    </p>
-                    <Result result={result} />
-                    <footer className="form__footer">kursy walut z dn. 18.02.2023</footer>
-                </fieldset>
-            </form>
-
-        </div>
+        </FormContainer>
     );
 }
 
