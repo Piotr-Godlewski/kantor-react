@@ -16,7 +16,7 @@ const Clock = () => {
 
     return (
         <StyledClock>
-            Dzisiaj jest
+            Dzisiaj jest {" "}
             {date.toLocaleDateString(
                 undefined,
                 {
