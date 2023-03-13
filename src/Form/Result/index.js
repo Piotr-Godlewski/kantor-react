@@ -1,5 +1,7 @@
+import { StyledResult } from "./styled"
+
 const Result = ({ result }) => (
-    <p className="form__labelResult">
+    <StyledResult>
         {result !== undefined && (
             <>
                 {result.sourceAmount.toFixed(2)}
@@ -8,7 +10,7 @@ const Result = ({ result }) => (
                 {result.currency}
             </>
         )}
-    </p>
+    </StyledResult>
 )
 
 export default Result
