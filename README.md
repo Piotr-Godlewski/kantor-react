@@ -7,6 +7,10 @@ This app change currency zloty to pound (£) or euro (€) or dolar ($). App cre
 Update (05.03.2023)
 
 Added date and clock that refresh ever second. 
+
+Update (16.03.2023)
+
+Added custom hook and chaged style.css to styled-component styled.js
 ## Demo
 
 https://piotr-godlewski.github.io/kantor-react/
