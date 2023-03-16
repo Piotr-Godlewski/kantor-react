@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/kantor-react/static/css/main.f9d45e24.css",
-    "main.js": "/kantor-react/static/js/main.3c5483bd.js",
+    "main.js": "/kantor-react/static/js/main.b2b677c0.js",
     "static/js/787.509e3ee3.chunk.js": "/kantor-react/static/js/787.509e3ee3.chunk.js",
     "static/media/changedMoney.jpg": "/kantor-react/static/media/changedMoney.0fd35a5ed1fcdfd4f277.jpg",
     "index.html": "/kantor-react/index.html",
     "main.f9d45e24.css.map": "/kantor-react/static/css/main.f9d45e24.css.map",
-    "main.3c5483bd.js.map": "/kantor-react/static/js/main.3c5483bd.js.map",
+    "main.b2b677c0.js.map": "/kantor-react/static/js/main.b2b677c0.js.map",
     "787.509e3ee3.chunk.js.map": "/kantor-react/static/js/787.509e3ee3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f9d45e24.css",
-    "static/js/main.3c5483bd.js"
+    "static/js/main.b2b677c0.js"
   ]
 }
