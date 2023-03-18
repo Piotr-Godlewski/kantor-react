@@ -1,3 +1,7 @@
+import { createGlobalStyle } from "styled-components";
+import background from "./changedMoney.jpg";
+
+export const GlobalStyle = createGlobalStyle`
 html {
   box-sizing: border-box;
   height: -webkit-fill-available;
@@ -13,7 +17,7 @@ body {
 }
 
 :root {
-  background-image: url("../public/changedMoney.jpg");
+  background-image: url("${background}");
   background-position: center;
   background-size: cover;
   background-repeat: repeat-y;
@@ -28,3 +32,4 @@ body {
     grid-template-columns: 1fr;
   }
 }
+`
