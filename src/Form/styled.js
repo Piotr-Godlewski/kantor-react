@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FormContainer = styled.div`
-  background-color: white;
+  background-color: ${({theme}) => theme.color.white};
   border-radius: 20px;
   margin: 20px;
   padding: 10px;
@@ -16,7 +16,7 @@ export const StyledForm = styled.form`
 `;
 
 export const Header = styled.header`
-  color: teal;
+  color: ${({theme}) => theme.color.teal};
   padding: 10px;
   font-size: 22px;
   font-weight: bold;
@@ -27,7 +27,7 @@ export const Paragraph = styled.p`
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -37,37 +37,37 @@ export const LabelText = styled.span`
   max-width: 200px;
   display: inline-block;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}px) {
     justify-self: center;
   }
 `;
 
 export const FormField = styled.input`
-  border: 2px solid #888;
+  border: 2px solid ${({theme}) => theme.color.gray};
   border-radius: 5px;
   width: 100%;
   padding: 5px;
 `;
 
 export const Button = styled.button`
-  color: white;
+  color: ${({theme}) => theme.color.white};
   border: none;
   border-radius: 5px;
   width: 100%;
   display: block;
   margin: 10px auto;
   padding: 5px;
-  background-color: cadetblue;
+  background-color: ${({theme}) => theme.color.cadetblue};
   font-size: 18px;
 
   &:hover {
-    background-color: hsl(182, 25%, 60%);
+    filter: brightness(110%);
     transform: scale(1.05);
     transition: 1.5s;
   }
 
   &:active {
-    background-color: hsl(182, 25%, 45%);
+    filter: brightness(90%);
     transition: 0.5s;
   }
 `;
