@@ -16,10 +16,10 @@ function App() {
   }
 
   return (
-      <Form
-        calculateResult={calculateResult}
-        result={result}>
-      </Form>
+    <Form
+      calculateResult={calculateResult}
+      result={result}>
+    </Form>
   )
 }
 
