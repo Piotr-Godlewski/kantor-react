@@ -3,6 +3,7 @@ import { useState } from "react";
 import Result from "./Result";
 import Clock from "./Clock";
 import { FormContainer, StyledForm, Header, Button, Paragraph, LabelText, FormField, Footer } from "./styled";
+import { useRatesData } from "./useRatesData";
 
 const Form = ({ calculateResult, result }) => {
     const [amount, setAmount] = useState("");
@@ -15,6 +16,8 @@ const Form = ({ calculateResult, result }) => {
 
         calculateResult(amount, currency);
     }
+
+    const ratesData = useRatesData();
 
     return (
         <FormContainer>
@@ -47,11 +50,12 @@ const Form = ({ calculateResult, result }) => {
                         value={currency}
                         onChange={onSelectChange}
                     >
-                        {currencies.map((currency => (
+                        {Object.keys(ratesData.rates).map((currency => (
                             <option
-                                key={currency.symbol}
-                                value={currency.symbol} >
-                                {currency.name} {currency.symbol}
+                                key={currency}
+                                value={currency}
+                            >
+                                {currency}
                             </option>
                         )))};
                     </FormField>
@@ -61,7 +65,8 @@ const Form = ({ calculateResult, result }) => {
                 </Button>
                 <Result result={result} />
                 <Footer>
-                    kursy walut z dn. 18.02.2023
+                    Kursy walut zostały pobrane z Europejskiego Banku Centralnego
+                    <br /> Aktualne na dzień: {ratesData.date}
                 </Footer>
             </StyledForm>
 
