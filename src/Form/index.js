@@ -8,6 +8,7 @@ import { useRatesData } from "./useRatesData";
 const Form = ({ calculateResult, result }) => {
     const [amount, setAmount] = useState("");
     const [currency, setCurrency] = useState(currencies[0].symbol);
+    const ratesData = useRatesData();
 
     const onSelectChange = ({ target }) => setCurrency(target.value);
 
@@ -16,8 +17,6 @@ const Form = ({ calculateResult, result }) => {
 
         calculateResult(amount, currency);
     }
-
-    const ratesData = useRatesData();
 
     return (
         <FormContainer>
@@ -50,12 +49,12 @@ const Form = ({ calculateResult, result }) => {
                         value={currency}
                         onChange={onSelectChange}
                     >
-                        {Object.keys(ratesData.rates).map((currency => (
+                        {currencies.map((currency => (
                             <option
-                                key={currency}
-                                value={currency}
+                                key={currency.symbol}
+                                value={currency.symbol}
                             >
-                                {currency}
+                                {currency.symbol}
                             </option>
                         )))};
                     </FormField>
