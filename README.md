@@ -11,12 +11,18 @@ Added date and clock that refresh ever second.
 Update (16.03.2023)
 
 Added custom hook and chaged style.css to styled-component styled.js
+
+Update (01.04.2023)
+
+Added exchange rate download from API.
+Added message when loading page or when there is an error.
+
 ## Demo
 
 https://piotr-godlewski.github.io/kantor-react/
 ## App animation
 
-![animation_gif](public/ExchangeAnimation.gif)
+![animation_gif](ExchangeAnimation.gif)
 ## `About React.js`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
