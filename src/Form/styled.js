@@ -8,6 +8,15 @@ export const FormContainer = styled.div`
   text-align: center;
 `;
 
+export const ErrorContainer = styled.div`
+  background-color: ${({theme}) => theme.color.white};
+  color: ${({theme}) => theme.color.red};
+  border-radius: 20px;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+`;
+
 export const StyledForm = styled.form`
   border: none;
   padding: 10px;
@@ -20,6 +29,13 @@ export const Header = styled.header`
   padding: 10px;
   font-size: 22px;
   font-weight: bold;
+`;
+
+export const LoadingHeader = styled.header`
+  color: ${({theme}) => theme.color.teal};
+  padding: 10px;
+  font-size: 18px;
+  text-align: left;
 `;
 
 export const Paragraph = styled.p`
