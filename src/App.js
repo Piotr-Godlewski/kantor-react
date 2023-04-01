@@ -1,6 +1,6 @@
 import Form from './Form';
 import { useState } from 'react';
-import { useRatesData } from './Form/useRatesData';
+import { useRatesData } from './useRatesData';
 
 function App() {
   const [result, setResult] = useState();
@@ -19,7 +19,9 @@ function App() {
   return (
     <Form
       calculateResult={calculateResult}
-      result={result}>
+      result={result}
+      ratesData={ratesData}
+    >
     </Form>
   )
 }
