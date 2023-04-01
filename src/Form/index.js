@@ -9,7 +9,6 @@ const Form = ({ calculateResult, result }) => {
     const [amount, setAmount] = useState("");
     const [currency, setCurrency] = useState(currencies[0].symbol);
     const ratesData = useRatesData();
-    console.log(ratesData);
 
     const onSelectChange = ({ target }) => setCurrency(target.value);
 
