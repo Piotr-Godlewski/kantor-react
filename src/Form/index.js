@@ -1,14 +1,11 @@
-import currencies from "../currencies";
 import { useState } from "react";
 import Result from "./Result";
 import Clock from "./Clock";
-import { FormContainer, StyledForm, Header, Button, Paragraph, LabelText, FormField, Footer } from "./styled";
-import { useRatesData } from "./useRatesData";
+import { FormContainer, ErrorContainer, StyledForm, Header, LoadingHeader, Button, Paragraph, LabelText, FormField, Footer } from "./styled";
 
-const Form = ({ calculateResult, result }) => {
+const Form = ({ calculateResult, result, ratesData }) => {
     const [amount, setAmount] = useState("");
-    const [currency, setCurrency] = useState(currencies[0].symbol);
-    const ratesData = useRatesData();
+    const [currency, setCurrency] = useState("AED");
 
     const onSelectChange = ({ target }) => setCurrency(target.value);
 
@@ -20,7 +17,12 @@ const Form = ({ calculateResult, result }) => {
 
     if (ratesData.error) {
         return (
-            <FormContainer> BŁĄD !!! </FormContainer>
+            <ErrorContainer>
+                Ups ...😕 wygląda na to że coś poszło nie tak 🤔
+                <br />Sprawdź proszę swoje połączenie z internetem 🧐
+                <br />Jeśli masz połączenie, to znaczy, że błąd jest po naszej stronie, już nad tym pracujemy👨‍💻
+                <br />Zapraszamy później😀 do zobaczenia 👋
+            </ErrorContainer>
         )
     }
     return (
@@ -31,7 +33,10 @@ const Form = ({ calculateResult, result }) => {
                     Kantor wymiany walut
                 </Header>
                 {ratesData.loading ?
-                    <Header> Poczekaj Chwileczkę 😍</Header> :
+                    <LoadingHeader>
+                        Zanim zdążysz mrugnąć ...😉
+                        <br /> Pobierzemy dla Ciebie aktualne kursy walut z Europejskiego Banku Centarlnego🤓
+                    </LoadingHeader> :
                     <>
                         <Paragraph>
                             <LabelText>
