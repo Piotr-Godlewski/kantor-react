@@ -17,6 +17,6 @@ const Clock = () => {
             {date.toLocaleTimeString()}
         </StyledClock>
     )
-}
+};
 
 export default Clock

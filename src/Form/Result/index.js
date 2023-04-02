@@ -11,6 +11,6 @@ const Result = ({ result }) => (
             </>
         )}
     </StyledResult>
-)
+);
 
 export default Result

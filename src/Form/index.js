@@ -25,6 +25,7 @@ const Form = ({ calculateResult, result, ratesData }) => {
             </ErrorContainer>
         )
     }
+
     return (
         <FormContainer>
             <StyledForm onSubmit={onSubmit}>
@@ -36,56 +37,57 @@ const Form = ({ calculateResult, result, ratesData }) => {
                     <LoadingHeader>
                         Zanim zdążysz mrugnąć ...😉
                         <br /> Pobierzemy dla Ciebie aktualne kursy walut z Europejskiego Banku Centarlnego🤓
-                    </LoadingHeader> :
-                    <>
-                        <Paragraph>
-                            <LabelText>
-                                Podaj kwotę w zł:
-                            </LabelText>
-                            <FormField
-                                value={amount}
-                                onChange={({ target }) => setAmount(target.value)}
-                                type="number"
-                                step="0.01"
-                                name="kwota_zl"
-                                placeholder="0.00"
-                                autoFocus
-                                required
-                                min="0.01"
-                            />
-                        </Paragraph>
-                        <Paragraph>
-                            <LabelText>
-                                Wybierz walutę:
-                            </LabelText>
-                            <FormField as={"select"}
-                                value={currency}
-                                onChange={onSelectChange}
-                            >
-                                {Object.keys(ratesData.rates).map((currency => (
-                                    <option
-                                        key={currency}
-                                        value={currency}
-                                    >
-                                        {currency}
-                                    </option>
-                                )))};
-                            </FormField>
-                        </Paragraph>
-                        <Button>
-                            Przelicz
-                        </Button>
-                        <Result result={result} />
-                        <Footer>
-                            Kursy walut zostały pobrane z Europejskiego Banku Centralnego
-                            <br /> Aktualne na dzień: {ratesData.date}
-                        </Footer>
-                    </>
+                    </LoadingHeader> : (
+                        <>
+                            <Paragraph>
+                                <LabelText>
+                                    Podaj kwotę w zł:
+                                </LabelText>
+                                <FormField
+                                    value={amount}
+                                    onChange={({ target }) => setAmount(target.value)}
+                                    type="number"
+                                    step="0.01"
+                                    name="kwota_zl"
+                                    placeholder="0.00"
+                                    autoFocus
+                                    required
+                                    min="0.01"
+                                />
+                            </Paragraph>
+                            <Paragraph>
+                                <LabelText>
+                                    Wybierz walutę:
+                                </LabelText>
+                                <FormField as={"select"}
+                                    value={currency}
+                                    onChange={onSelectChange}
+                                >
+                                    {Object.keys(ratesData.rates).map((currency => (
+                                        <option
+                                            key={currency}
+                                            value={currency}
+                                        >
+                                            {currency}
+                                        </option>
+                                    )))};
+                                </FormField>
+                            </Paragraph>
+                            <Button>
+                                Przelicz
+                            </Button>
+                            <Result result={result} />
+                            <Footer>
+                                Kursy walut zostały pobrane z Europejskiego Banku Centralnego
+                                <br /> Aktualne na dzień: {ratesData.date}
+                            </Footer>
+                        </>
+                    )
                 }
             </StyledForm>
 
         </FormContainer>
     );
-}
+};
 
 export default Form
