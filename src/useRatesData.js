@@ -4,7 +4,7 @@ import axios from "axios";
 const API_URL = "https://api.exchangerate.host/latest?base=PLN"
 
 export const useRatesData = () => {
-    const [ratesData, setRatesData] = useState({ loading: true });
+    const [ratesData, setRatesData] = useState({ status: "loading" });
 
     useEffect(() => {
         const getRates = async () => {
@@ -13,14 +13,15 @@ export const useRatesData = () => {
 
                 setRatesData({
                     date: response.data.date,
-                    rates: response.data.rates
+                    rates: response.data.rates,
+                    status: "success"
                 });
             }
             catch (error) {
                 console.error(error);
 
                 setRatesData({
-                    error
+                    status: "error"
                 });
             }
         };

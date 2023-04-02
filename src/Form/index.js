@@ -15,7 +15,7 @@ const Form = ({ calculateResult, result, ratesData }) => {
         calculateResult(amount, currency);
     }
 
-    if (ratesData.error) {
+    if (ratesData.status === "error") {
         return (
             <ErrorContainer>
                 Ups ...😕 wygląda na to że coś poszło nie tak 🤔
@@ -32,7 +32,7 @@ const Form = ({ calculateResult, result, ratesData }) => {
                 <Header>
                     Kantor wymiany walut
                 </Header>
-                {ratesData.loading ?
+                {ratesData.status === "loading" ?
                     <LoadingHeader>
                         Zanim zdążysz mrugnąć ...😉
                         <br /> Pobierzemy dla Ciebie aktualne kursy walut z Europejskiego Banku Centarlnego🤓
